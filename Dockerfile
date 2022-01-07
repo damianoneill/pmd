@@ -12,6 +12,8 @@ WORKDIR /opt
 ARG PMD_VERSION=6.41.0
 ENV PMD_VERSION=${PMD_VERSION}
 
+ENV PMD_JAVA_OPTS=-Xmx512m
+
 RUN curl -sLO https://github.com/pmd/pmd/releases/download/pmd_releases%2F${PMD_VERSION}/pmd-bin-${PMD_VERSION}.zip && \
     unzip pmd-bin-${PMD_VERSION}.zip && \
     rm pmd-bin-${PMD_VERSION}.zip && \
